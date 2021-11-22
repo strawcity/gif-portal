@@ -4,10 +4,8 @@ import Main from './views/Main';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Main />
-      </header>
+    <div className="App bg-yellow-100 h-screen w-screen flex justify-center items-center">
+      <Main />
     </div>
   );
 }
