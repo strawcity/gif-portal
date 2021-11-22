@@ -1,14 +1,16 @@
 import { proxy, useSnapshot } from 'valtio'
 import { updateProxy } from './helpers'
 
-export const defaultWalletState = {}
+export const defaultWalletState = {
+    walletAddress: '',
+}
 
-const state = proxy(defaultWalletState)
+const walletAddress = proxy(defaultWalletState)
 
-export default state
+export default walletAddress
 
-export const useWalletSnapshot = () => useSnapshot(state)
+export const useWalletSnapshot = () => useSnapshot(walletAddress)
 
-export const setWallet = (wallet) => {
-    updateProxy(state, wallet)
+export const setWallet = (newWalletAddress) => {
+    updateProxy(walletAddress, newWalletAddress)
 }
